@@ -1,12 +1,16 @@
-%Functions 0.1
+%Functions 0.2
 \usepackage{minted}
 
 \newcommand{\sqlfile}[1] {
 \begin{quote}
+    \sqlfileunquote{#1}
+\end{quote}
+}
+
+\newcommand{\sqlfileunquote}[1] {
     \IfFileExists{#1.sql}{
     \inputminted{SQL}{#1.sql}
     }{\textcolor{red}{File not found.}}
-\end{quote}
 }
 
 \newcommand{\code}[1] {\textit{\texttt{#1}}}
