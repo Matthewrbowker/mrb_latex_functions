@@ -1,5 +1,9 @@
-%Functions 0.2
+%Functions 0.3
 \usepackage{minted}
+
+\newcommand{\codefile}[2] {
+\IfFileExists{#1.#2}{\inputminted{#2}{#1.#2}}{\color{red}{File not found: #1.#2}}
+}
 
 \newcommand{\sqlfile}[1] {
 \begin{quote}
@@ -8,9 +12,19 @@
 }
 
 \newcommand{\sqlfileunquote}[1] {
-    \IfFileExists{#1.sql}{
-    \inputminted{SQL}{#1.sql}
-    }{\textcolor{red}{File not found.}}
+\codefile{#1}{sql}
+}
+
+\newcommand{\javafile}[1] {
+\begin{quote}
+    \javafileunquote{#1}
+\end{quote}
+}
+
+\newcommand{\javafileunquote}[1] {
+\codefile{#1}{java}
 }
 
 \newcommand{\code}[1] {\textit{\texttt{#1}}}
+
+\newcommand{\secExercise}[1] {\section{Exercise #1}}
