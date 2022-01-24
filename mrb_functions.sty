@@ -1,0 +1,12 @@
+%Functions 0.1
+\usepackage{minted}
+
+\newcommand{\sqlfile}[1] {
+\begin{quote}
+    \IfFileExists{#1.sql}{
+    \inputminted{SQL}{#1.sql}
+    }{\textcolor{red}{File not found.}}
+\end{quote}
+}
+
+\newcommand{\code}[1] {\textit{\texttt{#1}}}
