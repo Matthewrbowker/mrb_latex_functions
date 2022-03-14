@@ -1,4 +1,4 @@
-%Functions 0.7
+%Functions 0.8
 \ProvidesPackage{mrb_functions}
 
 \usepackage{minted}
@@ -26,4 +26,12 @@
 \begin{quote}
     #1
 \end{quote}
+}
+
+\newcommand{\proofanswer}[1] {
+    \begin{quote}
+        \begin{proof}[\textbf{Proof}]
+            #1
+        \end{proof}
+    \end{quote}
 }
